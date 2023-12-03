@@ -1,0 +1,403 @@
+body{
+    background-color: #191A1A;
+    color: azure;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: DejaVu Sans Mono, monospace;
+}
+body .color
+{
+  position: absolute;
+  z-index: 0;
+  transform: skewX(-30deg);
+  filter: blur(150px); 
+  z-index: 1;
+}
+body .color:nth-child(1) 
+{   
+  bottom: 65%;
+  left: 55%;
+  width: 30%;
+  height: 20%;
+  background: linear-gradient(180deg, #36E4DA 50%, #36E4DA 75.13%, rgba(54, 228, 218, 0.00) 161.6%);
+}
+body .color:nth-child(2)
+{
+  bottom: 40%;
+  left: 60%;
+  width: 30%;
+  height: 10%;
+  background:linear-gradient(180deg, #00DC82 50%, rgba(0, 220, 130, 0.85) 50.01%, rgba(0, 220, 130, 0.00) 161.6%);
+}
+body .color:nth-child(3)
+{
+  top: 40%;
+  left: 5%;
+  width: 20%;
+  height: 30%;
+  background: #1d7a8f;
+}
+body .color:nth-child(4)
+{
+  bottom:10%;
+  left: 5%;
+  width: 20%;
+  height: 25%;
+  background: #bf4e9f;
+}
+body .color:nth-child(5)
+{
+  top: 90%;
+  left: 5%;
+  width: 20%;
+  height: 25%;
+  background: #c3ef54;
+}
+
+
+header{
+    position: relative;
+    display: grid;
+    grid-template-columns:10% 5% 30% 25% 30%;
+    grid-template-areas:
+     "logo logo-name menu button icon";
+    justify-items: center;
+    align-items: center;
+    height: fit-content;
+    width: 80%;
+    margin: 1% 8%;
+    padding: 2% 3%; 
+    border-radius: 50px;
+    border: 1px solid #9F9F9F;
+    background-color: rgba(15, 15, 15, 0.40); 
+    backdrop-filter: blur(10px); 
+    z-index: 10;
+}
+.ns ul{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2em;
+    margin-left:4em;
+    padding: 0;
+}
+.ns li{
+    list-style-type: none;
+}
+.logo {
+    width: 100px;
+    height: 100px;
+    grid-area: logo;
+}
+.ns{
+    grid-area:menu;
+}
+.name-logo::after{
+    position: absolute;
+    top: 2.3em;
+    content: 'ECOPROJECT';
+    font-size: 18px;
+    color:azure;
+    font-family: DejaVu Sans Mono, monospace;
+    grid-area: logo-name;
+}
+nav a, .menu-footer a{
+    color:azure;
+    font-family: DejaVu Sans Mono, monospace;
+    text-decoration: none;
+    font-size: 18px;
+}
+.icon-block {
+    display: flex;
+    justify-content: start;
+    gap:1em;
+    grid-area: icon;
+}
+.icon2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin-top: 1%;
+    margin-left: 1%;
+    cursor:grab;
+    border-radius: 50%;
+    background-color: #232525; 
+    overflow: hidden;
+}
+.icon2::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    transform: translateY(-100%);
+    background: linear-gradient(90deg, #0BBA72 0%, #16A79E 100%);     
+    transition: all 1.5s;
+}
+.icon2:hover::after {
+    transform: translateY(0);
+}
+.fa-brands{
+    z-index: 1;
+    color:azure;
+}
+.button2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 15px;
+    height: 2em;
+    font-size: 14px;
+    padding: 10px 20px;
+    font-family: DejaVu Sans Mono, monospace;
+    background-color: #0BBA72;
+    border: #0BBA72;
+    box-shadow:0 0 15px #00FA9A;
+    color:azure;
+    transition: all 1.35s;
+    font-family: DejaVu Sans Mono, monospace;
+    grid-area: button;
+}
+.button2:hover{
+    background-color: #232525;
+    color: azure;
+    box-shadow: 0 0 15px #232525;
+    transition: all 0.5s ease-in-out;
+}
+.push {
+    display: none;
+}
+
+
+ @media (max-width: 1000px){
+    header{
+        grid-template-columns:25% 5% 1%;
+        row-gap: 3%;
+        grid-template-areas: 
+        "logo logo-name"
+        ". menu" 
+        ". button" 
+        ". icon";
+    }
+    .button2, .icon-block{
+        display: none;
+        margin-left: 4em;
+    }
+    .icon-block{
+        padding-bottom: 250%;
+    }
+    .ns{
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        max-height: 0;
+    }
+    .ns ul{
+        flex-direction: column;
+        margin: 0;
+    }
+    .icon{
+        cursor: grab;
+        float: right;
+    }
+    .hamb {
+        background:azure;
+        display: block;
+        height: 4px;
+        position: relative;
+        width: 30px;
+        margin-left: 25em;
+    }
+    .hamb::before,
+    .hamb::after{
+        background: azure;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+    }
+    .hamb::before{
+        top: 7px;
+    }
+    .hamb::after{
+        top: -7px;
+    }
+    .push:checked ~ .ns{
+        max-height: 100%;
+        visibility: visible;
+    }
+    .push:checked ~ .button2, .push:checked ~ .icon-block{
+        display: flex;
+        flex-direction: column;
+    }
+    .icon-block{
+        flex-direction: column;
+    }
+    .push:checked ~ .icon .hamb {
+        background: transparent;
+    }
+    .push:checked ~ .icon .hamb::before {
+        transform: rotate(45deg);
+        top:0;
+    }
+    .push:checked ~ .icon .hamb::after {
+        transform: rotate(-45deg);
+        top:0;
+    } 
+    .icon2::after{
+        transform: translateY(0);
+    } 
+
+
+    .menu-footer, .footer-part1, .footer-part2{
+        flex-direction: column;
+    }
+
+    .tree, .tree2{
+        flex-direction: column;
+        width: 100%;
+    }
+    .list{
+        margin-right: 60%;
+    }
+    .arrow1, .arrow2{
+        padding-bottom: 20%;
+    }
+}
+
+
+footer{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: auto;
+    width: 100%;
+    border-top: 1px solid #27272A; 
+    background: #0C0C0D;
+}
+.menu-footer{
+    display: flex;
+    gap: 2em;
+    margin-top: 1em;
+    margin-left:1em;
+    padding: 0;
+    list-style-type: none;
+} 
+.log {
+    margin-left:0.5em;
+    width: 80px;
+    height: 80px;
+}
+.name-logo-footer::after{
+    position: relative;
+    bottom: 2em;
+    content: 'ECOPROJECT';
+    font-size: 18px;
+}
+.footer-part1{
+    display: flex;
+    gap: 45%;
+    margin-left: 2%;
+}
+.inputBox input{
+    border-radius: 35px;
+    border: 1px solid rgba(255,255,255,0.5);
+    height: 2.5em;
+    background-color: #232525;
+    color:azure;
+}
+.inputBox a{
+    color:azure;
+    font-weight: 900;
+}
+.footer-part2{
+    display: flex;
+    gap: 5%;
+    margin-left: 2%;
+}
+.phone, .mail, .author{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.phone a, .mail a{
+    text-decoration: none;
+    color: azure;
+}
+.phone img, .mail img{
+    filter: invert(1);
+    width: 35px;
+    height: 35px;
+    margin-right: 3%;
+}
+
+
+main{
+    position: relative;
+    z-index: 10;
+}
+abbr{
+    background-image: linear-gradient(90deg, #00DC82, #36E4DA);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.part1{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 2rem auto;
+    width: 70%;
+    text-align:justify;
+}
+h1, .new-link{
+    padding-left: 15%;
+}
+.h2{
+    text-align: center;
+    background-image: linear-gradient(90deg, #00DC82, #36E4DA);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.arrow1, .arrow2{
+    position: relative;
+    width: 25%;
+    height: 40%;
+    filter: invert(1);
+    margin-left: 15%;
+    transform: rotate(-10deg);
+}
+.arrow2{
+    transform: scale(-1, 1) rotate(-10deg);
+}
+.list{
+    display: flex;
+    gap: 15%;
+    margin-top: -15%;
+}
+.list2{
+    display: flex;
+    flex-direction: column;
+}
+.gmi{
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    opacity: 0.9;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 3px #36E4DA;
+    transition: all 0.5s ease-in-out;
+}
+.gmi:hover{
+    transform: scale(1.5);
+    transition: all 0.5s ease-in-out;
+}
+.tree, .tree2{
+    display: flex;
+    gap: 2%;
+    padding-bottom: 5%;
+}

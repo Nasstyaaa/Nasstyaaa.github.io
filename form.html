@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link rel="icon" type="image/png" href="favicon/akacia.png"> 
+  <link rel="stylesheet" href="style_form.css">
+</head>
+<body>
+  <section>
+    <div class="color" style="--i:0;"></div>
+    <div class="color" style="--i:1;"></div>
+    <div class="color" style="--i:2;"></div>
+    <div class="color" style="--i:3;"></div>
+    <div class="color" style="--i:4;"></div>
+
+    <div class="box">
+      <div class="container">
+        <form class="form" id="form">
+          <h2>Регистрация</h2>
+          <div class="grid-form">
+
+            <div class="inputBox name">
+              <input type="text" placeholder="Имя" required>
+            </div>
+
+            <div class="inputBox fam">
+              <input type="text" placeholder="Фамилия">
+            </div>
+
+            <div class="inputBox tel">
+              <input type="tel" placeholder="Телефон" required>
+            </div>
+
+            <div class="inputBox pas">
+              <input type="email" placeholder="Почта">
+            </div>
+
+          </div>
+
+          <div class="inputBox">
+            <font color="#fff"><span id="antispam"></span></font>
+            <input type="text" placeholder="Повторите"  id="repeat">
+            <p><font color="#fff">Антиспам</font><font color="#cc0000">*</font></p>
+          </div>
+
+          <div class="inputBox">
+            <input type="submit" id="entrance" value="Войти">
+          </div>
+          <script src="script_entrance.js"></script>
+
+          <p class="forget">Забыли пароль? 
+            <a href="#">Перейти</a>
+          </p>
+
+          <p class="forget">Нет аккаунта?
+            <a href="#">Зарегистрироваться</a>
+          </p>
+
+          <div class="transition"><a href="index.html">Главная</a></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

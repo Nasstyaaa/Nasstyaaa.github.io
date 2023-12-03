@@ -1,0 +1,181 @@
+body{
+    background-color: #191A1A;
+    color: azure;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: DejaVu Sans Mono, monospace;
+}
+body .color
+{
+  position: absolute;
+  z-index: 0;
+  transform: skewX(-30deg);
+  filter: blur(150px); 
+  z-index: 1;
+}
+body .color:nth-child(1) 
+{   
+  bottom: 65%;
+  left: 55%;
+  width: 30%;
+  height: 20%;
+  background: linear-gradient(180deg, #36E4DA 50%, #36E4DA 75.13%, rgba(54, 228, 218, 0.00) 161.6%);
+}
+body .color:nth-child(2)
+{
+  bottom: 60%;
+  left: 60%;
+  width: 30%;
+  height: 10%;
+  background:linear-gradient(180deg, #00DC82 50%, rgba(0, 220, 130, 0.85) 50.01%, rgba(0, 220, 130, 0.00) 161.6%);
+}
+body .color:nth-child(3)
+{
+  top: 20%;
+  left: 35%;
+  width: 20%;
+  height: 30%;
+  background: #1d7a8f;
+}
+body .color:nth-child(4)
+{
+  bottom:60%;
+  left: 25%;
+  width: 20%;
+  height: 25%;
+  background: #bf4e9f;
+}
+body .color:nth-child(5)
+{
+  top: 20%;
+  left: 5%;
+  width: 20%;
+  height: 25%;
+  background: #c3ef54;
+}
+.transition{
+    position: relative;
+    width: 10%;
+    left: 80%;
+    color: #191A1A;
+}
+.transition a{
+    text-decoration: none;
+    color: azure;
+}
+
+
+footer{
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: auto;
+    width: 100%;
+    border-top: 1px solid #27272A; 
+    background: #0C0C0D;
+}
+.log {
+    margin-left:0.5em;
+    width: 80px;
+    height: 80px;
+}
+.name-logo-footer::after{
+    position: relative;
+    bottom: 2em;
+    content: 'ECOPROJECT';
+    font-size: 18px;
+}
+.footer-part1{
+    display: flex;
+    gap: 54%;
+    margin-left: 2%;
+}
+.inputBox input{
+    border-radius: 35px;
+    border: 1px solid rgba(255,255,255,0.5);
+    height: 2.5em;
+    background-color: #232525;
+    color:azure;
+}
+.inputBox a{
+    color:azure;
+    font-weight: 900;
+}
+.footer-part2{
+    display: flex;
+    gap: 1%;
+    margin-left: 2%;
+}
+.phone, .mail, .author{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.phone a, .mail a{
+    text-decoration: none;
+    color: azure;
+}
+.phone img, .mail img{
+    filter: invert(1);
+    width: 35px;
+    height: 35px;
+    margin-right: 3%;
+}
+
+
+header{
+    position: relative;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    padding: 7% 0;
+}
+
+
+main{
+    height: 100%;
+    position: relative;
+    z-index: 10;
+    background-color: rgb(247, 249, 251);
+    color: #191A1A;
+}
+.part1{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 2%;
+    width: 95%;
+    text-align:justify;
+}
+.gmi{
+    width: 100%;
+    height: 100%;
+    padding-top: 5%;
+}
+.tree2{
+    display: flex;
+    gap: 2%;
+    padding-bottom: 2%;
+}
+.text1{
+    padding-top: 5%;
+    line-height: 2em;
+}
+
+
+@media (max-width: 1000px){
+    .menu-footer, .footer-part1, .footer-part2{
+        flex-direction: column;
+    }
+
+    .tree, .tree2{
+        flex-direction: column;
+        width: 100%;
+    }
+    .gmi{
+        width: 50%;
+        height: 80%;
+        padding-left: 25%;
+    }
+}
+
