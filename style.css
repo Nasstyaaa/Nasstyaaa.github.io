@@ -343,9 +343,7 @@ main{
     z-index: 10;
 }
 abbr{
-    background-image: linear-gradient(90deg, #00DC82, #36E4DA);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: rgba(0, 220, 130, 0.85);
 }
 .part1{
     display: flex;
@@ -359,9 +357,7 @@ h1, .new-link{
 }
 .h2{
     text-align: center;
-    background-image: linear-gradient(90deg, #00DC82, #36E4DA);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: rgba(0, 220, 130, 0.85);
 }
 .arrow1, .arrow2{
     position: relative;
@@ -369,6 +365,7 @@ h1, .new-link{
     height: 40%;
     filter: invert(1);
     margin-left: 15%;
+    padding-bottom: 14%;
     transform: rotate(-10deg);
 }
 .arrow2{
