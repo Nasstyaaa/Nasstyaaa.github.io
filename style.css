@@ -362,10 +362,9 @@ h1, .new-link{
 .arrow1, .arrow2{
     position: relative;
     width: 25%;
-    height: 40%;
     filter: invert(1);
     margin-left: 15%;
-    padding-bottom: 14%;
+    padding-bottom: 13%;
     transform: rotate(-10deg);
 }
 .arrow2{
